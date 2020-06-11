@@ -1,20 +1,28 @@
-import {ReactNode, MouseEventHandler} from 'react'
+import React, {ReactNode, MouseEventHandler} from 'react'
+import {IThemeVariables, TColor, TSize} from '@ucheba/utils/types/styles'
 
-export type Sizes = 'default' | 'small' | 'large'
-
-export type Colors = 'default' | 'primary' | 'accent'
-
-export interface BlockProps {
+export interface IBlockProps {
   className?: string
   children?: ReactNode
   type?: 'button' | 'submit'
   href?: string
-  size?: Sizes
-  color?: Colors
+  size?: TSize
+  color?: TColor
   icon?: JSX.Element | boolean
   onClick?: MouseEventHandler
+  as?: string | any
 }
 
-export interface GetTagNameProps {
-  href?: string
+export interface IGetTagName {
+  (props: {href?: string}): string
+}
+
+export interface IGetRightProps {
+  (
+    props: Pick<IBlockProps, 'type' | 'href' | 'as'>,
+    ref:
+      | ((instance: HTMLElement | null) => void)
+      | React.MutableRefObject<HTMLElement | null>,
+    otherProps: object
+  ): object
 }

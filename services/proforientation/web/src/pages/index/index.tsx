@@ -10,6 +10,7 @@ const devicesComponents: ObjectDevicesComponents = {
   mobile: dynamic(() => import('./_mobile')),
   desktop: dynamic(() => import('./_desktop')),
 }
+
 const IndexPage: NextPage<PageProps> = props => {
   return getDevicePage(props, devicesComponents)
 }

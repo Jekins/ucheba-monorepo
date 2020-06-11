@@ -1,8 +1,8 @@
 import React from 'react'
 import styled, {css} from 'styled-components'
-import {addModifiersToBlock} from '@ucheba/utils/helpers/styles'
+import {sv, withModifiers} from '@ucheba/utils/helpers/styles'
 import DefaultComponent, {defaultProps, Icon, Inner} from './_default'
-import {BlockProps} from '../_types'
+import {IBlockProps} from '../_types'
 
 const Button = styled(DefaultComponent)`
   && {
@@ -10,12 +10,12 @@ const Button = styled(DefaultComponent)`
       border: 3px solid white;
     }
   }
-` as React.FC<BlockProps>
+` as React.FC<IBlockProps>
 
-addModifiersToBlock(Button, {
+withModifiers(Button, {
   color: {
-    default: css`
-      background-color: ${(props): string => props.theme.colors.accent};
+    primary: css`
+      background-color: ${sv.colors.accent};
 
       ${Inner} {
         color: #fff;

@@ -1,7 +1,7 @@
 import React, {forwardRef} from 'react'
 import styled, {css} from 'styled-components'
-import {addModifiersToBlock} from '@ucheba/utils/helpers/styles'
-import {BlockProps} from '../_types'
+import {sv, withModifiers} from '@ucheba/utils/helpers/styles'
+import {IBlockProps} from '../_types'
 import {getRightProps} from '../_bll'
 
 export const Inner = styled.span`
@@ -20,16 +20,16 @@ export const Icon = styled.span`
   align-items: center;
 `
 
-export const Block = styled.div<BlockProps>`
+export const Block = styled.div<IBlockProps>`
   cursor: pointer;
   border-radius: 8px;
   text-decoration: none;
 `
 
-addModifiersToBlock(Block, {
+withModifiers(Block, {
   color: {
-    default: css`
-      background-color: ${(props): string => props.theme.colors.default};
+    base: css`
+      background-color: ${sv.colors.base};
       border: 2px solid red;
 
       ${Inner} {
@@ -37,7 +37,7 @@ addModifiersToBlock(Block, {
       }
     `,
     primary: css`
-      background-color: ${(props): string => props.theme.colors.primary};
+      background-color: ${sv.colors.primary};
 
       ${Inner} {
         color: #fff;
@@ -46,12 +46,12 @@ addModifiersToBlock(Block, {
   },
 
   size: {
-    default: css`
-      font-size: 16px;
+    medium: css`
+      font-size: ${sv.sizes.medium};
       padding: 12px;
     `,
     large: css`
-      font-size: 22px;
+      font-size: ${sv.sizes.large};
       padding: 20px;
     `,
   },
@@ -64,13 +64,13 @@ addModifiersToBlock(Block, {
 })
 
 export const defaultProps = {
-  color: 'default',
-  size: 'default',
-} as Partial<BlockProps>
+  color: 'base',
+  size: 'medium',
+} as Partial<IBlockProps>
 
 Block.defaultProps = defaultProps
 
-export default forwardRef<HTMLElement, BlockProps>(function Button(
+export default forwardRef<HTMLElement, IBlockProps>(function Button(
   {children, icon, ...props},
   ref
 ) {

@@ -3,6 +3,7 @@ import * as React from 'react'
 import Link from 'next/link'
 import Button from '@ucheba/ui/basic/Button/web/desktop'
 
+// это для теста
 const Icon = ({type}: {type: string}): JSX.Element => <span>{type}</span>
 
 const desktop: NextPage = () => {

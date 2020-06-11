@@ -1,11 +1,11 @@
 import {changePropsValueToBoolean} from '@ucheba/utils/helpers/core'
-import {GetTagNameProps} from './_types'
+import {IGetTagName, IGetRightProps} from './_types'
 
-export const getTagName = ({href}: GetTagNameProps): string => {
+export const getTagName: IGetTagName = ({href}) => {
   return (href && 'a') || 'button'
 }
 
-export const getRightProps = (props, ref, otherProps = {}): object => {
+export const getRightProps: IGetRightProps = (props, ref, otherProps = {}) => {
   const newProps = {...props, ref, ...changePropsValueToBoolean(otherProps)}
 
   if (newProps.href) {
