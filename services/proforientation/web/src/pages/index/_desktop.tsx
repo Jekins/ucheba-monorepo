@@ -1,7 +1,7 @@
 import {NextPage} from 'next'
 import * as React from 'react'
 import Link from 'next/link'
-import Button from '@ucheba/ui/basic/Button/web/desktop'
+import Button from '@ucheba/ui/components/Button/web/desktop'
 
 // это для теста
 const Icon = ({type}: {type: string}): JSX.Element => <span>{type}</span>

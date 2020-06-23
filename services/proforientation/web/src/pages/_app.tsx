@@ -1,18 +1,14 @@
 import React from 'react'
 import {AppProps, AppContext} from 'next/app'
 import {ThemeProvider} from 'styled-components'
-import Theme from '@ucheba/utils/helpers/styles'
 import {addIsMobileToPropsApp} from '@ucheba/utils/helpers/next'
-
-const themeProject = new Theme({
-  colors: {
-    primary: 'orange',
-  },
-})
+import GlobalStyles from '@ucheba/ui/core/GlobalStyles'
+import themeProject from '../theme'
 
 const App = ({Component, pageProps}: AppProps): JSX.Element => {
   return (
     <ThemeProvider theme={{mode: 'default', ...themeProject.variables}}>
+      <GlobalStyles />
       <Component {...pageProps} />
     </ThemeProvider>
   )

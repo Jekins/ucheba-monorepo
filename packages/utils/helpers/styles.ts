@@ -4,7 +4,7 @@ import {IThemeVariables, IWithModifiers} from '../types/styles'
 export default class Theme {
   private defaultVariables: Required<IThemeVariables> = {
     colors: {
-      base: 'gray',
+      base: '#333',
       primary: 'blue',
       accent: 'green',
     },
