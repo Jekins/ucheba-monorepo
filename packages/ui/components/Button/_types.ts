@@ -1,5 +1,5 @@
 import React, {ReactNode, MouseEventHandler} from 'react'
-import {IThemeVariables, TColor, TSize} from '@ucheba/utils/types/styles'
+import {TColor, TSize} from '@ucheba/utils/types/styles'
 
 export interface IBlockProps {
   className?: string

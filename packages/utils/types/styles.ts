@@ -1,3 +1,4 @@
+import {StyledFunction} from 'styled-components'
 import {TRecordOptional} from './common'
 
 export type TSize = 'medium' | 'xsmall' | 'small' | 'large' | 'xlarge'
@@ -16,6 +17,6 @@ export interface IThemeVariables {
   sizes?: TSizes
 }
 
-export interface IWithModifiers {
-  (Component: any, modifiers: object): void
+export interface ICreateModifiers {
+  (modifiers: object): StyledFunction<any>[]
 }

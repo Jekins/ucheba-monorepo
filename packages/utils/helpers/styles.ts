@@ -1,5 +1,5 @@
 import theme from 'styled-theming'
-import {IThemeVariables, IWithModifiers} from '../types/styles'
+import {ICreateModifiers, IThemeVariables} from '../types/styles'
 
 export default class Theme {
   private defaultVariables: Required<IThemeVariables> = {
@@ -57,7 +57,9 @@ export default class Theme {
 
 export const sv = new Theme().styledVariables
 
-export const withModifiers: IWithModifiers = (Component, modifiers) => {
+export const addModifiers: ICreateModifiers = (modifiers = {}) => {
+  const newModifiers = []
+
   Object.keys(modifiers).forEach(modifier => {
     let kindModifier = modifiers[modifier]
 
@@ -76,6 +78,8 @@ export const withModifiers: IWithModifiers = (Component, modifiers) => {
       }
     }, {})
 
-    Component.componentStyle.rules.push(theme.variants('mode', modifier, valueModifier))
+    newModifiers.push(theme.variants('mode', modifier, valueModifier))
   })
+
+  return newModifiers
 }

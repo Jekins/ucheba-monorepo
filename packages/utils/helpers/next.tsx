@@ -1,21 +1,8 @@
 import * as React from 'react'
-import {AppContext} from 'next/app'
 import {isMobile as isMobileUtil} from './core'
+import {IDevicePage} from '../types/next'
 
-export interface ObjectDevicesComponents {
-  mobile: React.ComponentType
-  desktop: React.ComponentType
-}
-
-export interface PageProps {
-  isMobile: boolean
-}
-
-interface DevicePage {
-  (props: PageProps, devicesComponents: ObjectDevicesComponents): JSX.Element
-}
-
-export const getDevicePage: DevicePage = ({isMobile}, devicesComponents) => {
+export const getIDevicePage: IDevicePage = ({isMobile}, devicesComponents) => {
   const PageMobile = devicesComponents.mobile
   const PageDesktop = devicesComponents.desktop
 

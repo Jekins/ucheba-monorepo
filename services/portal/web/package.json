@@ -1,11 +1,12 @@
 {
-  "name": "@ucheba/proforientation-web",
+  "name": "@ucheba/portal.web",
   "version": "0.0.1",
-  "description": "Proforientation web",
+  "description": "Portal web",
   "license": "MIT",
   "scripts": {
     "dev": "next",
-    "build": "next build"
+    "build": "next build",
+    "start": "next start -p 4000"
   },
   "devDependencies": {
     "@types/next": "^9.0.0",

@@ -1,6 +1,6 @@
 import React, {forwardRef} from 'react'
 import styled, {css} from 'styled-components'
-import {sv, withModifiers} from '@ucheba/utils/helpers/styles'
+import {sv, addModifiers} from '@ucheba/utils/helpers/styles'
 import {IBlockProps} from '../_types'
 import {getRightProps} from '../_bll'
 
@@ -20,48 +20,48 @@ export const Icon = styled.span`
   align-items: center;
 `
 
-export const Block = styled.div<IBlockProps>`
+export const Block = styled.div`
   cursor: pointer;
   border-radius: 8px;
   text-decoration: none;
+
+  ${addModifiers({
+    color: {
+      base: css`
+        background-color: ${sv.colors.base};
+        border: 2px solid red;
+
+        ${Inner} {
+          color: #fff;
+        }
+      `,
+      primary: css`
+        background-color: ${sv.colors.primary};
+
+        ${Inner} {
+          color: #fff;
+        }
+      `,
+    },
+
+    size: {
+      medium: css`
+        font-size: ${sv.sizes.medium};
+        padding: 12px;
+      `,
+      large: css`
+        font-size: ${sv.sizes.large};
+        padding: 20px;
+      `,
+    },
+
+    icon: css`
+      ${Inner} {
+        margin-right: 15px;
+      }
+    `,
+  })}
 `
-
-withModifiers(Block, {
-  color: {
-    base: css`
-      background-color: ${sv.colors.base};
-      border: 2px solid red;
-
-      ${Inner} {
-        color: #fff;
-      }
-    `,
-    primary: css`
-      background-color: ${sv.colors.primary};
-
-      ${Inner} {
-        color: #fff;
-      }
-    `,
-  },
-
-  size: {
-    medium: css`
-      font-size: ${sv.sizes.medium};
-      padding: 12px;
-    `,
-    large: css`
-      font-size: ${sv.sizes.large};
-      padding: 20px;
-    `,
-  },
-
-  icon: css`
-    ${Inner} {
-      margin-right: 15px;
-    }
-  `,
-})
 
 export const defaultProps = {
   color: 'base',

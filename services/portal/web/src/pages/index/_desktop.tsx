@@ -27,6 +27,10 @@ const desktop: NextPage = () => {
       <Button color='primary' size='large' icon={<Icon type='😊' />}>
         Button desk primary
       </Button>
+
+      <Button>
+        Button desk primary
+      </Button>
     </div>
   )
 }

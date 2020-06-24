@@ -6,7 +6,7 @@ const babelConfig = api => {
     ['@babel/preset-typescript', {isTSX: true, allExtensions: true}],
   ]
 
-  const plugins = [['styled-components', {ssr: true}]]
+  const plugins = [['styled-components', {ssr: true, fileName: true}]]
 
   return {
     presets,
