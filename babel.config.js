@@ -3,10 +3,10 @@ const babelConfig = api => {
 
   const presets = [
     'next/babel',
-    ['@babel/preset-typescript', {isTSX: true, allExtensions: true}],
+    ['@babel/preset-typescript', { isTSX: true, allExtensions: true }],
   ]
 
-  const plugins = [['styled-components', {ssr: true, fileName: true}]]
+  const plugins = [['styled-components', { ssr: true, fileName: true }]]
 
   return {
     presets,

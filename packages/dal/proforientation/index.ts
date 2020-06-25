@@ -15,7 +15,7 @@ const instance = axios.create({
 export const apiClient = {
   posts: {
     async getListing(): Promise<Post[]> {
-      const {data} = await instance.get('posts')
+      const { data } = await instance.get('posts')
       return data
     },
   },

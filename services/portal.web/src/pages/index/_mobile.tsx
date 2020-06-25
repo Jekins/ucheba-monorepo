@@ -1,6 +1,6 @@
-import {NextPage} from 'next'
+import { NextPage } from 'next'
 import * as React from 'react'
-import Button from '@ucheba/ui/components/Button/web/mobile'
+import Button from '@ucheba/ui/components/Button/mobile'
 
 const mobile: NextPage = () => {
   return (

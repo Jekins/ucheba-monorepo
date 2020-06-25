@@ -43,6 +43,7 @@
     }
   ],
   "rules": {
+    "import/prefer-default-export": "off",
     "no-console": "warn",
     "no-eval": "error",
     "import/first": "error",
@@ -52,6 +53,7 @@
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "no-useless-constructor": "off",
+    "@typescript-eslint/consistent-type-assertions": "off",
     "@typescript-eslint/interface-name-prefix": "off",
     "@typescript-eslint/no-var-requires": "off",
     "@typescript-eslint/explicit-function-return-type": "off",

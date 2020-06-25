@@ -1,6 +1,6 @@
-import {createGlobalStyle} from 'styled-components'
-import {sv} from '@ucheba/utils/helpers/styles'
-import {normalize} from 'styled-normalize'
+import { createGlobalStyle } from 'styled-components'
+import { sv } from '@ucheba/utils/helpers/styles'
+import { normalize } from 'styled-normalize'
 
 const GlobalStyles = createGlobalStyle`
   ${normalize}

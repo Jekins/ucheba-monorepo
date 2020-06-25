@@ -1,5 +1,5 @@
 {
-  "extends": "../../../tsconfig.json",
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "jsx": "preserve",
     "lib": ["dom", "es2017"],
@@ -13,7 +13,7 @@
     "noEmit": true,
     "module": "esnext"
   },
-  "exclude": ["node_modules"],
+  "exclude": ["web/node_modules"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "baseUrl": "../",
   "rootDir": "."

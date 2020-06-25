@@ -1,8 +1,8 @@
 import * as React from 'react'
-import {isMobile as isMobileUtil} from './core'
-import {IDevicePage} from '../types/next'
+import { isMobile as isMobileUtil } from './core'
+import { IDevicePage } from '../types/next'
 
-export const getIDevicePage: IDevicePage = ({isMobile}, devicesComponents) => {
+export const getIDevicePage: IDevicePage = ({ isMobile }, devicesComponents) => {
   const PageMobile = devicesComponents.mobile
   const PageDesktop = devicesComponents.desktop
 
@@ -16,5 +16,5 @@ export const addIsMobileToPropsApp = async (ctx, Component): Promise<{}> => {
     pageProps = await Component.getInitialProps(ctx)
   }
 
-  return {pageProps: {...pageProps, isMobile: isMobileUtil(ctx)}}
+  return { pageProps: { ...pageProps, isMobile: isMobileUtil(ctx) } }
 }

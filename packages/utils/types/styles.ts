@@ -1,5 +1,5 @@
-import {StyledFunction} from 'styled-components'
-import {TRecordOptional} from './common'
+import { StyledFunction } from 'styled-components'
+import { TRecordOptional } from './common'
 
 export type TSize = 'medium' | 'xsmall' | 'small' | 'large' | 'xlarge'
 export type TSizes = TRecordOptional<TSize, string>

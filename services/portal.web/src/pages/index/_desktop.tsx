@@ -1,10 +1,11 @@
-import {NextPage} from 'next'
+import { NextPage } from 'next'
 import * as React from 'react'
 import Link from 'next/link'
-import Button from '@ucheba/ui/components/Button/web/desktop'
+import Button from '@ucheba/ui/components/Button/desktop'
+import Header from '../../components/Header/desktop'
 
 // это для теста
-const Icon = ({type}: {type: string}): JSX.Element => <span>{type}</span>
+const Icon = ({ type }: { type: string }): JSX.Element => <span>{type}</span>
 
 const desktop: NextPage = () => {
   const handleClick = (e: React.MouseEvent): void => {
@@ -14,6 +15,8 @@ const desktop: NextPage = () => {
 
   return (
     <div>
+      <Header fixed />
+
       <h1>Desktop</h1>
 
       <Link href='/ege'>
@@ -28,9 +31,7 @@ const desktop: NextPage = () => {
         Button desk primary
       </Button>
 
-      <Button>
-        Button desk primary
-      </Button>
+      <Button>Button desk primary</Button>
     </div>
   )
 }

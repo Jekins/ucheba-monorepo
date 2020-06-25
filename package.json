@@ -8,9 +8,8 @@
   "scripts": {
     "postinstall": "rexreplace \"followSymlinks: false\" \"followSymlinks: true\" ./node_modules/watchpack/lib/DirectoryWatcher.js -V",
     "update:version": "lerna version --no-push",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix .",
-    "format": "prettier --write \"**/*.+(ts|tsx|js|jsx|json|css|md)\""
+    "format": "prettier --write \"**/*.+(ts|tsx|js|jsx|json|css|md)\"",
+    "start": "lerna bootstrap && lerna run build && pm2 restart ecosystem.config.js --env production "
   },
   "husky": {
     "hooks": {

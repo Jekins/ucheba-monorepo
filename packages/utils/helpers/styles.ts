@@ -1,5 +1,5 @@
 import theme from 'styled-theming'
-import {ICreateModifiers, IThemeVariables} from '../types/styles'
+import { ICreateModifiers, IThemeVariables } from '../types/styles'
 
 export default class Theme {
   private defaultVariables: Required<IThemeVariables> = {
@@ -27,7 +27,7 @@ export default class Theme {
 
   private replaceColors(colors: IThemeVariables = {}): void {
     Object.keys(colors).forEach(part => {
-      this.defaultVariables[part] = {...this.defaultVariables[part], ...colors[part]}
+      this.defaultVariables[part] = { ...this.defaultVariables[part], ...colors[part] }
     })
   }
 
@@ -45,19 +45,19 @@ export default class Theme {
     }, {})
   }
 
-  get styledVariables(): IThemeVariables {
+  get styledVariables(): Required<IThemeVariables> {
     return Object.keys(this.variables).reduce((accVars, kind) => {
       return {
         ...accVars,
         [kind]: this.getVariablesByKind(kind, this.variables[kind]),
       }
-    }, {})
+    }, <Required<IThemeVariables>>{})
   }
 }
 
 export const sv = new Theme().styledVariables
 
-export const addModifiers: ICreateModifiers = (modifiers = {}) => {
+export const createModifiers: ICreateModifiers = (modifiers = {}) => {
   const newModifiers = []
 
   Object.keys(modifiers).forEach(modifier => {
