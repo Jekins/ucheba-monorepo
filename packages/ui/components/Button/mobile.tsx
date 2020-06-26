@@ -1,8 +1,8 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import styled from 'styled-components'
 import DefaultComponent from './_default'
-import { IBlockProps } from './_types'
+import { TButtonProps } from './_types'
 
-const Button = styled(DefaultComponent)`` as FC<IBlockProps>
+const Button = styled(DefaultComponent)`` as FC<TButtonProps>
 
 export default Button

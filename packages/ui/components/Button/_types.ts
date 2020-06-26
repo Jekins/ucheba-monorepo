@@ -1,7 +1,7 @@
 import React, { ReactNode, MouseEventHandler } from 'react'
 import { TColor, TSize } from '@ucheba/utils/types/styles'
 
-export interface IBlockProps {
+export type TButtonProps = {
   className?: string
   children?: ReactNode
   type?: 'button' | 'submit'
@@ -19,7 +19,7 @@ export interface IGetTagName {
 
 export interface IGetRightProps {
   (
-    props: Pick<IBlockProps, 'type' | 'href' | 'as'>,
+    props: Pick<TButtonProps, 'type' | 'href' | 'as'>,
     ref:
       | ((instance: HTMLElement | null) => void)
       | React.MutableRefObject<HTMLElement | null>,

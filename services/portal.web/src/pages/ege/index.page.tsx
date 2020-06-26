@@ -7,6 +7,7 @@ const devicesComponents: IObjectDevicesComponents = {
   mobile: dynamic(() => import('./_mobile')),
   desktop: dynamic(() => import('./_desktop')),
 }
+
 const EgePage: NextPage<IPageProps> = props => {
   return getIDevicePage(props, devicesComponents)
 }

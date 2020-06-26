@@ -1,8 +1,8 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import styled, { css } from 'styled-components'
 import { createModifiers, sv } from '@ucheba/utils/helpers/styles'
-import DefaultComponent, { defaultProps, Icon, Inner } from './_default'
-import { IBlockProps } from './_types'
+import DefaultButton, { defaultProps, Icon, Inner } from './_default'
+import { TButtonProps } from './_types'
 
 const buttonModifiers = createModifiers({
   color: {
@@ -16,7 +16,7 @@ const buttonModifiers = createModifiers({
   },
 })
 
-const Button = styled(DefaultComponent)`
+const Button = styled(DefaultButton)`
   && {
     ${Icon} {
       border: 3px solid white;
@@ -24,7 +24,7 @@ const Button = styled(DefaultComponent)`
 
     ${buttonModifiers}
   }
-` as FC<IBlockProps>
+` as FC<TButtonProps>
 
 Button.defaultProps = defaultProps
 

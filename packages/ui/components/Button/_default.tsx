@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 import { sv, createModifiers } from '@ucheba/utils/helpers/styles'
-import { IBlockProps } from './_types'
+import { TButtonProps } from './_types'
 import { getRightProps } from './_bll'
 
 export const Inner = styled.span`
@@ -69,16 +69,15 @@ export const Block = styled.div`
 export const defaultProps = {
   color: 'base',
   size: 'medium',
-} as Partial<IBlockProps>
+} as Partial<TButtonProps>
 
-export default forwardRef<HTMLElement, IBlockProps>(function DefaultButton(
-  { children, icon, ...props },
-  ref
-) {
+const DefaultButton = ({ children, icon, ...props }, ref): JSX.Element => {
   return (
     <Block {...getRightProps(props, ref, { icon })}>
       <Inner>{children}</Inner>
       {icon && <Icon>{icon}</Icon>}
     </Block>
   )
-})
+}
+
+export default forwardRef<HTMLElement, TButtonProps>(DefaultButton)

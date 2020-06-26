@@ -22,6 +22,8 @@ const plugins = [
   [withCustomWebpack],
 ]
 
-const config = {}
+const config = {
+  pageExtensions: ['page.tsx']
+}
 
 module.exports = withPlugins(plugins, config)
