@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import styled, { css } from 'styled-components'
 import { createModifiers, sv } from '@ucheba/utils/helpers/styles'
-import { THeaderProps } from './_types'
+import { THeaderProps } from './types'
 
 const Inner = styled.div`
   max-width: 1300px;
@@ -24,7 +24,7 @@ const Block = styled.header`
   ${blockModifiers}
 `
 
-const DefaultHeader: FC<THeaderProps> = props => {
+const Header: FC<THeaderProps> = props => {
   return (
     <Block {...props}>
       <Inner>Header</Inner>
@@ -32,4 +32,4 @@ const DefaultHeader: FC<THeaderProps> = props => {
   )
 }
 
-export default DefaultHeader
+export default Header

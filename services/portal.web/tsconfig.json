@@ -1,20 +1,24 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",
+    "lib": ["esnext"],
     "jsx": "preserve",
-    "lib": ["dom", "es2017"],
-    "allowJs": true,
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
     "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
     "noEmit": true,
-    "module": "esnext"
+    "resolveJsonModule": true,
+    "isolatedModules": true
   },
-  "exclude": ["web/node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "baseUrl": "../",
-  "rootDir": "."
+  "exclude": ["node_modules", "build", "scripts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }

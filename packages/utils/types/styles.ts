@@ -4,11 +4,7 @@ import { TRecordOptional } from './common'
 export type TSize = 'medium' | 'xsmall' | 'small' | 'large' | 'xlarge'
 export type TSizes = TRecordOptional<TSize, string>
 
-export enum EColor {
-  base = 'base',
-  primary = 'primary',
-  accent = 'accent',
-}
+/** Colors */
 export type TColor = 'base' | 'primary' | 'accent'
 export type TColors = TRecordOptional<TColor, string>
 

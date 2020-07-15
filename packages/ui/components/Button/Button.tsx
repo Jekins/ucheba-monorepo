@@ -1,15 +1,15 @@
-import React, { forwardRef } from 'react'
+import React, { FC } from 'react'
 import styled, { css } from 'styled-components'
 import { sv, createModifiers } from '@ucheba/utils/helpers/styles'
-import { TButtonProps } from './_types'
-import { getRightProps } from './_bll'
+import { TPropsButton } from './types'
+import { getProps } from './bll'
 
-export const Inner = styled.span`
+const Inner = styled.span`
   color: red;
   font-weight: bold;
 `
 
-export const Icon = styled.span`
+const Icon = styled.span`
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -38,16 +38,35 @@ const blockModifiers = createModifiers({
         color: #fff;
       }
     `,
+    accent: css`
+      background-color: ${sv.colors.accent};
+
+      ${Inner} {
+        color: #fff;
+      }
+    `,
   },
 
   size: {
     medium: css`
       font-size: ${sv.sizes.medium};
-      padding: 12px;
+      padding: 20px;
+    `,
+    xsmall: css`
+      font-size: ${sv.sizes.xsmall};
+      padding: 16px;
+    `,
+    small: css`
+      font-size: ${sv.sizes.small};
+      padding: 18px;
     `,
     large: css`
       font-size: ${sv.sizes.large};
       padding: 20px;
+    `,
+    xlarge: css`
+      font-size: ${sv.sizes.xlarge};
+      padding: 22px;
     `,
   },
 
@@ -58,26 +77,28 @@ const blockModifiers = createModifiers({
   `,
 })
 
-export const Block = styled.div`
+const Block = styled.div`
   cursor: pointer;
   border-radius: 8px;
   text-decoration: none;
+  display: inline-flex;
 
   ${blockModifiers}
 `
 
-export const defaultProps = {
-  color: 'base',
-  size: 'medium',
-} as Partial<TButtonProps>
-
-const DefaultButton = ({ children, icon, ...props }, ref): JSX.Element => {
+/** Кнопка или ссылка в виде кнопки */
+const Button: FC<TPropsButton> = ({ children, icon, ...props }) => {
   return (
-    <Block {...getRightProps(props, ref, { icon })}>
+    <Block {...getProps(props, { icon })}>
       <Inner>{children}</Inner>
       {icon && <Icon>{icon}</Icon>}
     </Block>
   )
 }
 
-export default forwardRef<HTMLElement, TButtonProps>(DefaultButton)
+Button.defaultProps = {
+  color: 'base',
+  size: 'medium',
+}
+
+export default Button

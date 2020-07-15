@@ -1,0 +1,22 @@
+{
+  "plugins": [
+    {
+      "name": "@zeplin/cli-connect-react-plugin"
+    },
+    {
+      "name": "@zeplin/cli-connect-storybook-plugin",
+      "config": {
+        "url": "http://localhost:5000",
+        "startScript": "storybook"
+      }
+    }
+  ],
+  "projects": [],
+  "styleguides": ["5f0d8ca580daec82d9d32ed2"],
+  "components": [
+    {
+      "path": "../../packages/ui/components/Button/Button.tsx",
+      "zeplinNames": ["EgeCard/view=minimize/color=acid"]
+    }
+  ]
+}

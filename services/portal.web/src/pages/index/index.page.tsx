@@ -1,14 +1,14 @@
 import { NextPage } from 'next'
 import dynamic from 'next/dynamic'
 import { getIDevicePage } from '@ucheba/utils/helpers/next'
-import { IObjectDevicesComponents, IPageProps } from '@ucheba/utils/types/next'
+import { IObjectDevicesComponents, IPropsPage } from '@ucheba/utils/types/next'
 
 const devicesComponents: IObjectDevicesComponents = {
-  mobile: dynamic(() => import('./_mobile')),
+  touch: dynamic(() => import('./_touch')),
   desktop: dynamic(() => import('./_desktop')),
 }
 
-const IndexPage: NextPage<IPageProps> = props => {
+const IndexPage: NextPage<IPropsPage> = props => {
   return getIDevicePage(props, devicesComponents)
 }
 

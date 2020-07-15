@@ -1,8 +1,8 @@
 import { NextPage } from 'next'
 import * as React from 'react'
 import Link from 'next/link'
-import Button from '@ucheba/ui/components/Button/desktop'
-import Header from '../../components/Header/desktop'
+import Button from '@ucheba/ui/components/Button'
+import Header from '../../components/Header'
 
 // это для теста
 const Icon = ({ type }: { type: string }): JSX.Element => <span>{type}</span>
@@ -23,7 +23,7 @@ const desktop: NextPage = () => {
         <a>ЕГЭ</a>
       </Link>
 
-      <Button type='button' href='/' icon={<Icon type='+' />} onClick={handleClick}>
+      <Button type='button' href='/' onClick={handleClick}>
         Button desk default with icon
       </Button>
 
@@ -31,7 +31,9 @@ const desktop: NextPage = () => {
         Button desk primary
       </Button>
 
-      <Button>Button desk primary</Button>
+      <Button color='accent' size='small'>
+        Button desk primary
+      </Button>
     </div>
   )
 }

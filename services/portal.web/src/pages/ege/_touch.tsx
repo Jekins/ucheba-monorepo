@@ -1,7 +1,7 @@
 import { NextPage } from 'next'
 import * as React from 'react'
 
-const mobile: NextPage = () => {
+const touch: NextPage = () => {
   return (
     <div>
       <h1>Mobile ЕГЭ</h1>
@@ -9,4 +9,4 @@ const mobile: NextPage = () => {
   )
 }
 
-export default mobile
+export default touch

@@ -11,7 +11,7 @@ export const mobileDetect = (ctx: object): string => {
   return detected.mobile()
 }
 
-export const isMobile = (ctx: object): boolean => {
+export const isTouch = (ctx: object): boolean => {
   return Boolean(mobileDetect(ctx))
 }
 

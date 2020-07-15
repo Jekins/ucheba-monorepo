@@ -1,12 +1,16 @@
 {
   "name": "@ucheba/portal.web",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Portal web",
   "license": "MIT",
   "scripts": {
-    "dev": "next",
+    "dev": "next -p 3001",
     "build": "next build",
     "start": "next start -p 4000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "[git@pve1.ucheba.ru:2201]:ucheba/frontend.git"
   },
   "devDependencies": {
     "@types/next": "^9.0.0",
@@ -21,9 +25,9 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "@ucheba/dal": "^0.0.1",
-    "@ucheba/ui": "^0.0.1",
-    "@ucheba/utils": "^0.0.1",
+    "@ucheba/dal": "^0.0.2",
+    "@ucheba/ui": "^0.0.2",
+    "@ucheba/utils": "^0.0.2",
     "formik": "^2.1.4",
     "next": "^9.4.4",
     "react": "^16.13.1",
