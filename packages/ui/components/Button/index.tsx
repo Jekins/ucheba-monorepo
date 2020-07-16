@@ -1,78 +1,70 @@
 import React, { FC } from 'react'
 import styled, { css } from 'styled-components'
-import { sv, createModifiers } from '@ucheba/utils/helpers/styles'
+import { createModifiers } from '@ucheba/utils/helpers/styles'
+import { sv } from '@ucheba/utils/helpers/styles/variables'
 import { TPropsButton } from './types'
 import { getProps } from './bll'
 
 const Inner = styled.span`
-  color: red;
-  font-weight: bold;
+  color: ${sv.color.red};
+  font-weight: ${sv.fontWeight.bold};
 `
 
 const Icon = styled.span`
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  color: #fff;
-  font-weight: bold;
+  color: ${sv.color.white};
+  font-weight: ${sv.fontWeight.bold};
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  background-color: ${sv.colors.base};
+  background-color: ${sv.color.acid};
 `
 
 const blockModifiers = createModifiers({
   color: {
-    base: css`
-      background-color: ${sv.colors.base};
-      border: 2px solid red;
+    blue: css`
+      background-color: ${sv.color.blue};
 
       ${Inner} {
-        color: #fff;
+        color: ${sv.color.white};
       }
     `,
-    primary: css`
-      background-color: ${sv.colors.primary};
+
+    emerald: css`
+      background-color: ${sv.color.emerald};
 
       ${Inner} {
-        color: #fff;
+        color: ${sv.color.white};
       }
     `,
-    accent: css`
-      background-color: ${sv.colors.accent};
+
+    gold: css`
+      background-color: ${sv.color.gold};
 
       ${Inner} {
-        color: #fff;
+        color: ${sv.color.black};
       }
     `,
   },
 
-  size: {
-    medium: css`
-      font-size: ${sv.sizes.medium};
-      padding: 20px;
-    `,
-    xsmall: css`
-      font-size: ${sv.sizes.xsmall};
-      padding: 16px;
-    `,
-    small: css`
-      font-size: ${sv.sizes.small};
-      padding: 18px;
-    `,
-    large: css`
-      font-size: ${sv.sizes.large};
-      padding: 20px;
-    `,
-    xlarge: css`
-      font-size: ${sv.sizes.xlarge};
-      padding: 22px;
-    `,
-  },
+  size: ((): object => {
+    const sizes = ['xsmall', 'small', 'medium', 'large', 'xlarge']
+
+    return sizes.reduce((acc, item) => {
+      acc[item] = css`
+        font-size: ${sv.fontSize[item]};
+        padding: ${sv.spacing[item]};
+      `
+
+      return acc
+    }, {})
+  })(),
 
   icon: css`
     ${Inner} {
-      margin-right: 15px;
+      margin-right: ${sv.spacing.small};
     }
   `,
 })
@@ -82,6 +74,12 @@ const Block = styled.div`
   border-radius: 8px;
   text-decoration: none;
   display: inline-flex;
+  transition: 0.3s;
+  border: none;
+
+  &:hover {
+    box-shadow: ${sv.shadow.large};
+  }
 
   ${blockModifiers}
 `
@@ -97,7 +95,7 @@ const Button: FC<TPropsButton> = ({ children, icon, ...props }) => {
 }
 
 Button.defaultProps = {
-  color: 'base',
+  color: 'blue',
   size: 'medium',
 }
 

@@ -1,7 +1,8 @@
 import { NextPage } from 'next'
-import * as React from 'react'
+import React, { FC } from 'react'
 import Link from 'next/link'
 import Button from '@ucheba/ui/components/Button'
+import Layout from '@ucheba/ui/components/Layout'
 import Header from '../../components/Header'
 
 // это для теста
@@ -13,10 +14,8 @@ const desktop: NextPage = () => {
     console.log('___', e)
   }
 
-  return (
+  const Body: FC = () => (
     <div>
-      <Header fixed />
-
       <h1>Desktop</h1>
 
       <Link href='/ege'>
@@ -27,15 +26,17 @@ const desktop: NextPage = () => {
         Button desk default with icon
       </Button>
 
-      <Button color='primary' size='large' icon={<Icon type='😊' />}>
+      <Button color='emerald' size='large' icon={<Icon type='😊' />}>
         Button desk primary
       </Button>
 
-      <Button color='accent' size='small'>
+      <Button color='gold' size='small'>
         Button desk primary
       </Button>
     </div>
   )
+
+  return <Layout header={<Header>Header</Header>} body={<Body />} />
 }
 
 export default desktop

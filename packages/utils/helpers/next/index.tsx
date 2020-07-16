@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { isTouch as isTouchUtil } from './core'
-import { IDevicePage } from '../types/next'
+import { isTouch as isTouchUtil } from '../core'
+import { IDevicePage } from './types'
 
 export const getIDevicePage: IDevicePage = ({ isTouch }, devicesComponents) => {
   const PageTouch = devicesComponents.touch
@@ -9,7 +9,7 @@ export const getIDevicePage: IDevicePage = ({ isTouch }, devicesComponents) => {
   return <>{isTouch ? <PageTouch /> : <PageDesktop />}</>
 }
 
-export const addIsMobileToPropsApp = async (ctx, Component): Promise<{}> => {
+export const addIsTouchToPropsApp = async (ctx, Component): Promise<{}> => {
   let pageProps = {}
 
   if (Component.getInitialProps) {

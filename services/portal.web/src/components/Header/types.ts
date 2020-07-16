@@ -1,3 +1,3 @@
-export type THeaderProps = {
-  fixed?: boolean
+export type TPropsHeader = {
+  test?: boolean
 }

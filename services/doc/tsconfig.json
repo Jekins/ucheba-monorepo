@@ -23,14 +23,8 @@
   },
   "awesomeTypescriptLoaderOptions": {
     "ignoreDiagnostics": [7005],
-    "reportFiles": [
-      "../../packages/ui/**/*",
-      "../../services/**/components/**/*"
-    ]
+    "reportFiles": ["../../packages/ui/**/*", "../**/components/**/*"]
   },
-  "include": [
-    "../../packages/ui/**/*",
-    "../../services/**/components/**/*"
-  ],
+  "include": ["../../packages/ui/**/*", "../**/components/**/*"],
   "exclude": ["./node_modules", "./build", "./scripts"]
 }

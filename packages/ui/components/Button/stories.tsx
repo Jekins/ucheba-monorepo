@@ -1,9 +1,9 @@
 import React, { FC } from 'react'
 import { select, text } from '@storybook/addon-knobs'
-import Button from './Button'
+import Button from './index'
 
 export default {
-  title: 'Components/Button',
+  title: 'UI/Components/Button',
   component: Button,
 }
 
@@ -11,11 +11,11 @@ export const playground: FC = () => {
   const ColorValue = select(
     'color',
     {
-      primary: 'primary',
-      accent: 'accent',
-      base: 'base',
+      blue: 'blue',
+      gold: 'gold',
+      emerald: 'emerald',
     },
-    'primary'
+    'blue'
   )
 
   const SizeValue = select(
@@ -39,11 +39,11 @@ export const playground: FC = () => {
 
 export const color: FC = () => (
   <div>
-    <Button color='base'>base</Button>
+    <Button color='blue'>blue</Button>
 
-    <Button color='primary'>primary</Button>
+    <Button color='gold'>gold</Button>
 
-    <Button color='accent'>accent</Button>
+    <Button color='emerald'>emerald</Button>
   </div>
 )
 

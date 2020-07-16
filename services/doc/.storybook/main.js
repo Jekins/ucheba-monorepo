@@ -3,7 +3,7 @@ const path = require("path")
 module.exports = {
   stories: [
     "@ucheba/ui/**/stories.(ts|tsx)",
-    "../../../services/**/components/**/stories.(ts|tsx)",
+    "@ucheba/portal.web/**/stories.(ts|tsx)",
   ],
   webpackFinal: async config => {
     config.module.rules.push({

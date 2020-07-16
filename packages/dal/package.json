@@ -1,6 +1,6 @@
 {
   "name": "@ucheba/dal",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Data access layer",
   "license": "MIT",
   "devDependencies": {

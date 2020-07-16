@@ -15,7 +15,7 @@
   "styleguides": ["5f0d8ca580daec82d9d32ed2"],
   "components": [
     {
-      "path": "../../packages/ui/components/Button/Button.tsx",
+      "path": "../../packages/ui/components/Button/index.tsx",
       "zeplinNames": ["EgeCard/view=minimize/color=acid"]
     }
   ]

@@ -1,6 +1,6 @@
 {
   "name": "@ucheba/portal.web",
-  "version": "0.0.2",
+  "version": "0.1.2",
   "description": "Portal web",
   "license": "MIT",
   "scripts": {
@@ -25,9 +25,10 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "@ucheba/dal": "^0.0.2",
-    "@ucheba/ui": "^0.0.2",
-    "@ucheba/utils": "^0.0.2",
+    "@storybook/addon-knobs": "^5.3.19",
+    "@ucheba/dal": "^0.1.0",
+    "@ucheba/ui": "^0.1.2",
+    "@ucheba/utils": "^0.1.2",
     "formik": "^2.1.4",
     "next": "^9.4.4",
     "react": "^16.13.1",

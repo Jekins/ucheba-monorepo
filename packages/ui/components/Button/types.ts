@@ -1,17 +1,14 @@
-import { ReactNode, MouseEventHandler } from 'react'
-import { TColor, TSize } from '@ucheba/utils/types/styles'
+import { MouseEventHandler } from 'react'
 
 export type TPropsButton = {
-  className?: string
-  children?: ReactNode
+  as?: string | any
   type?: 'button' | 'submit'
   /** Ссылка, на которую ведет кнопка. */
   href?: string
-  size?: TSize
-  color?: TColor
+  size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge'
+  color?: 'blue' | 'gold' | 'emerald'
   icon?: JSX.Element | boolean
   onClick?: MouseEventHandler
-  as?: string | any
   disabled?: boolean
 }
 

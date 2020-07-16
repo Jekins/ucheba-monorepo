@@ -1,6 +1,6 @@
 {
   "name": "@ucheba/doc",
-  "version": "0.0.1",
+  "version": "0.1.2",
   "description": "Документация фронтенда",
   "homepage": "",
   "license": "ISC",
@@ -16,15 +16,13 @@
     "connect": "yarn zeplin connect"
   },
   "dependencies": {
-    "@ucheba/ui": "^0.0.2",
+    "@ucheba/portal.web": "^0.1.2",
+    "@ucheba/ui": "^0.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.1"
   },
   "devDependencies": {
-    "@zeplin/cli": "^1.0.3",
-    "@zeplin/cli-connect-react-plugin": "^0.2.4",
-    "@zeplin/cli-connect-storybook-plugin": "^0.3.1",
     "@storybook/addon-a11y": "^5.3.19",
     "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-backgrounds": "^5.3.19",
@@ -37,6 +35,9 @@
     "@storybook/react": "^5.3.19",
     "@types/react": "^16.9.41",
     "@types/storybook__react": "^5.2.1",
+    "@zeplin/cli": "^1.0.3",
+    "@zeplin/cli-connect-react-plugin": "^0.2.4",
+    "@zeplin/cli-connect-storybook-plugin": "^0.3.1",
     "awesome-typescript-loader": "^5.2.1",
     "react-docgen-typescript-loader": "^3.7.2",
     "ts-loader": "^8.0.0",
