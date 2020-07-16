@@ -114,7 +114,7 @@ export enum EContainer {
 }
 
 export enum EDuration {
-  slow = '0.4s',
+  slow = '0.5s',
   medium = '0.3s',
   fast = '0.2s',
 }
